@@ -4,17 +4,17 @@
 
 	<bean id="viewController"
 		class="org.springframework.web.portlet.mvc.ParameterizableViewController">
-		<property name="viewName" value="/WEB-INF/jsp/view.jsp" />
+		<property name="viewName" value="/WEB-INF/welcome/view.jsp" />
 	</bean>
 
 	<bean id="helpController"
 		class="org.springframework.web.portlet.mvc.ParameterizableViewController">
-		<property name="viewName" value="/WEB-INF/jsp/help.jsp" />
+		<property name="viewName" value="/WEB-INF/welcome/help.jsp" />
 	</bean>
 
 	<bean id="editController"
 		class="org.springframework.web.portlet.mvc.ParameterizableViewController">
-		<property name="viewName" value="/WEB-INF/jsp/edit.jsp" />
+		<property name="viewName" value="/WEB-INF/welcome/edit.jsp" />
 	</bean>
 
 	<bean id="portletModeHandlerMapping"
