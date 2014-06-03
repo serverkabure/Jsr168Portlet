@@ -1,4 +1,4 @@
-package jsr168portlet;
+package jsr168portlet.utils;
 
 import java.io.File;
 import java.util.Map;

@@ -8,10 +8,36 @@
 
 	<portlet>
 		<portlet-name>welcome</portlet-name>
+		<portlet-class>jsr168portlet.welcome.WelcomePortlet</portlet-class>
+		<init-param>
+			<name>viewPage</name>
+			<value>/WEB-INF/welcome/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>editPage</name>
+			<value>/WEB-INF/welcome/edit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>helpPage</name>
+			<value>/WEB-INF/welcome/help.jsp</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>welcome</title>
+		</portlet-info>
+	</portlet>
+
+	<portlet>
+		<portlet-name>spring</portlet-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<init-param>
 			<name>contextConfigLocation</name>
-			<value>/WEB-INF/welcome/welcome-portlet.xml</value>
+			<value>/WEB-INF/spring/spring-portlet.xml</value>
 		</init-param>
 		<supports>
 			<mime-type>text/html</mime-type>
@@ -20,7 +46,7 @@
 			<portlet-mode>edit</portlet-mode>
 		</supports>
 		<portlet-info>
-			<title>Welcome</title>
+			<title>spring</title>
 		</portlet-info>
 	</portlet>
 
