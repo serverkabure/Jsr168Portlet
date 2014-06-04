@@ -30,6 +30,12 @@
 		<portlet-info>
 			<title>welcome</title>
 		</portlet-info>
+		<portlet-preferences>
+			<preference>
+				<name>html</name>
+				<value>WELCOME</value>
+			</preference>
+		</portlet-preferences>
 	</portlet>
 
 	<portlet>
