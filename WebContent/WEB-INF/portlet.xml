@@ -5,7 +5,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
 	                             http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
-
 	<portlet>
 		<portlet-name>welcome</portlet-name>
 		<portlet-class>jsr168portlet.welcome.WelcomePortlet</portlet-class>

@@ -6,7 +6,7 @@ import java.util.*;
 import javax.portlet.*;
 
 public class WelcomePortlet extends GenericPortlet {
-	private String viewPage, editPage, helpPage;
+	private String viewPage, editPage, helpPage, html;
 
 	@Override
 	public void init(PortletConfig config) throws PortletException {
@@ -14,6 +14,7 @@ public class WelcomePortlet extends GenericPortlet {
 		viewPage = config.getInitParameter("viewPage");
 		editPage = config.getInitParameter("editPage");
 		helpPage = config.getInitParameter("helpPage");
+		html = "Welcome";
 	}
 
 	public void processAction(ActionRequest request, ActionResponse response)
@@ -35,21 +36,23 @@ public class WelcomePortlet extends GenericPortlet {
 	protected void doView(RenderRequest request, RenderResponse response)
 			throws PortletException, IOException {
 		PortletPreferences pref = request.getPreferences();
-		String html = pref.getValue("html", "いらっしゃい");
-		//
+		html = pref.getValue("html", "いらっしゃい");
+		request.setAttribute("html", html);
 		// response.setContentType(request.getResponseContentType());
 		// PrintWriter writer = response.getWriter();
 		// writer.write("<form><p> " + html +
 		// "</p><p>日本語テスト。①Ⅰⅰ、～㎜㈱。</p></form>");
 		PortletRequestDispatcher dispatcher = getPortletContext()
 				.getRequestDispatcher(viewPage);
-		request.setAttribute("html", html);
 		dispatcher.include(request, response);
 	}
 
 	@Override
 	protected void doEdit(RenderRequest request, RenderResponse response)
 			throws PortletException, IOException {
+		PortletPreferences pref = request.getPreferences();
+		html = pref.getValue("html", "いらっしゃい");
+		request.setAttribute("html", html);
 		PortletRequestDispatcher dispatcher = getPortletContext()
 				.getRequestDispatcher(editPage);
 		dispatcher.include(request, response);
