@@ -6,7 +6,7 @@ import java.util.*;
 import javax.portlet.*;
 
 /**
- * JSP未使用の純粋JSR168ポートレット
+ * JSP未使用のJSR168ポートレット
  * 
  */
 public class WelcomePortlet extends GenericPortlet {

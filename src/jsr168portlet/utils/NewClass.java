@@ -11,7 +11,7 @@ public class NewClass {
 		factory.setProxyTargetClass(true);
 
 		RegexpMethodPointcutAdvisor advisor = new RegexpMethodPointcutAdvisor();
-		advisor.setPattern(".*get.*");
+		advisor.setPattern(".*(get|set).*");
 		DebugInterceptor interceptor = new DebugInterceptor();
 		advisor.setAdvice(interceptor);
 
