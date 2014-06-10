@@ -41,14 +41,12 @@ public class WelcomePortlet extends GenericPortlet {
 	protected void doView(RenderRequest request, RenderResponse response)
 			throws PortletException, IOException {
 		PortletPreferences pref = request.getPreferences();
-		html = pref.getValue("html", "いらっしゃい");
+		html = pref.getValue("html", "<p>いらっしゃい</p>");
 		request.setAttribute("html", html);
 		response.setContentType(request.getResponseContentType());
 		PrintWriter writer = response.getWriter();
 		StringBuffer sb = new StringBuffer();
-		sb.append("<form>");
-		sb.append("<p>").append(html).append("</p>");
-		sb.append("</form>");
+		sb.append("<form>").append(html).append("</form>");
 		writer.write(sb.toString());
 		writer.close();
 		// PortletRequestDispatcher dispatcher = getPortletContext()
