@@ -49,7 +49,7 @@
 
 	<portlet>
 		<portlet-name>hello</portlet-name>
-		<portlet-class>jsr168portlet.welcome.WelcomePortlet</portlet-class>
+		<portlet-class>jsr168portlet.hello.HelloPortlet</portlet-class>
 		<!-- <init-param> -->
 		<!-- <name>viewPage</name> -->
 		<!-- <value>/WEB-INF/welcome/view.jsp</value> -->

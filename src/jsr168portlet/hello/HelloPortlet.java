@@ -1,4 +1,4 @@
-package jsr168portlet.welcome;
+package jsr168portlet.hello;
 
 import java.io.*;
 import java.util.*;
@@ -9,7 +9,7 @@ import javax.portlet.*;
  * JSP未使用のJSR168ポートレット
  * 
  */
-public class WelcomePortlet extends GenericPortlet {
+public class HelloPortlet extends GenericPortlet {
 	// private String viewPage, editPage, helpPage;
 	String html;
 
