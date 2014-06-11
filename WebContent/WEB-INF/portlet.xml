@@ -7,19 +7,11 @@
 	                             http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
 	<portlet>
 		<portlet-name>welcome</portlet-name>
-		<portlet-class>jsr168portlet.welcome.WelcomePortlet</portlet-class>
-		<!-- <init-param> -->
-		<!-- <name>viewPage</name> -->
-		<!-- <value>/WEB-INF/welcome/view.jsp</value> -->
-		<!-- </init-param> -->
-		<!-- <init-param> -->
-		<!-- <name>editPage</name> -->
-		<!-- <value>/WEB-INF/welcome/edit.jsp</value> -->
-		<!-- </init-param> -->
-		<!-- <init-param> -->
-		<!-- <name>helpPage</name> -->
-		<!-- <value>/WEB-INF/welcome/help.jsp</value> -->
-		<!-- </init-param> -->
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/welcome/welcome-portlet.xml</value>
+		</init-param>
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
@@ -53,6 +45,38 @@
 		<portlet-info>
 			<title>spring</title>
 		</portlet-info>
+	</portlet>
+
+	<portlet>
+		<portlet-name>hello</portlet-name>
+		<portlet-class>jsr168portlet.welcome.WelcomePortlet</portlet-class>
+		<!-- <init-param> -->
+		<!-- <name>viewPage</name> -->
+		<!-- <value>/WEB-INF/welcome/view.jsp</value> -->
+		<!-- </init-param> -->
+		<!-- <init-param> -->
+		<!-- <name>editPage</name> -->
+		<!-- <value>/WEB-INF/welcome/edit.jsp</value> -->
+		<!-- </init-param> -->
+		<!-- <init-param> -->
+		<!-- <name>helpPage</name> -->
+		<!-- <value>/WEB-INF/welcome/help.jsp</value> -->
+		<!-- </init-param> -->
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>hello</title>
+		</portlet-info>
+		<portlet-preferences>
+			<preference>
+				<name>html</name>
+				<value>HELLO</value>
+			</preference>
+		</portlet-preferences>
 	</portlet>
 
 	<!-- <portlet> <portlet-name>pets</portlet-name> <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class> 

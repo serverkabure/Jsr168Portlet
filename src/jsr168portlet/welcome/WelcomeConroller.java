@@ -4,6 +4,7 @@ import java.util.*;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletPreferences;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
@@ -16,15 +17,21 @@ public class WelcomeConroller implements Controller {
 	@Override
 	public void handleActionRequest(ActionRequest request,
 			ActionResponse response) throws Exception {
-		// TODO 自動生成されたメソッド・スタブ
-
+		String html = request.getParameter("html");
+		PortletPreferences pref = request.getPreferences();
+		pref.setValue("html", html);
+		pref.store();
 	}
 
 	@Override
 	public ModelAndView handleRenderRequest(RenderRequest request,
 			RenderResponse response) throws Exception {
-		Map<String, String> map = new HashMap<>();
-		return new ModelAndView(viewName, "map", map);
+		PortletPreferences pref = request.getPreferences();
+		String html = pref.getValue("html", "こんにちは");
+		return new ModelAndView(viewName, "html", html);
+		
+		// Map<?, ?> map = request.getPreferences().getMap();
+		// return new ModelAndView(viewName, "map", map);
 	}
 
 	public String getViewName() {
