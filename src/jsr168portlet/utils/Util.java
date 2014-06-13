@@ -3,10 +3,21 @@ package jsr168portlet.utils;
 import java.io.File;
 import java.util.Map;
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.*;
+import org.springframework.web.portlet.mvc.Controller;
+
 public class Util {
-	public static void main(String[] args) {
-		// System.out.println(new File(".").getAbsolutePath());
-		main0(null);
+	public static void main(String[] args) throws Exception {
+		Resource resource = new ClassPathResource(
+				"/jsr168portlet/utils/applicationContext.xml");
+		BeanFactory factory = new XmlBeanFactory(resource);
+		//
+		Controller controller = (Controller) factory
+				.getBean("welcomeController");
+		System.out.println(controller.handleRenderRequest(null, null)
+				.getViewName());
 	}
 
 	public static void main1(String[] args) {

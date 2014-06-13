@@ -4,7 +4,7 @@ import org.springframework.aop.framework.*;
 import org.springframework.aop.interceptor.*;
 import org.springframework.aop.support.*;
 
-public class NewClass {
+public class AopSample {
 
 	public static void main(String[] args) {
 		ProxyFactory factory = new ProxyFactory(new Person());

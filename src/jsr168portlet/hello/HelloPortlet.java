@@ -1,9 +1,16 @@
 package jsr168portlet.hello;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.portlet.*;
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.GenericPortlet;
+import javax.portlet.PortletConfig;
+import javax.portlet.PortletException;
+import javax.portlet.PortletPreferences;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 /**
  * JSP未使用のJSR168ポートレット
@@ -41,7 +48,7 @@ public class HelloPortlet extends GenericPortlet {
 	protected void doView(RenderRequest request, RenderResponse response)
 			throws PortletException, IOException {
 		PortletPreferences pref = request.getPreferences();
-		html = pref.getValue("html", "<p>いらっしゃい</p>");
+		html = pref.getValue("html", "<p>こんにちは</p>");
 		request.setAttribute("html", html);
 		response.setContentType(request.getResponseContentType());
 		PrintWriter writer = response.getWriter();
@@ -58,7 +65,7 @@ public class HelloPortlet extends GenericPortlet {
 	protected void doEdit(RenderRequest request, RenderResponse response)
 			throws PortletException, IOException {
 		PortletPreferences pref = request.getPreferences();
-		html = pref.getValue("html", "いらっしゃい");
+		html = pref.getValue("html", "こんにちは");
 		request.setAttribute("html", html);
 		response.setContentType(request.getResponseContentType());
 		PrintWriter writer = response.getWriter();
